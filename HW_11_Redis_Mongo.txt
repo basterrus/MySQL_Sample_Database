@@ -1,0 +1,31 @@
+1. В базе данных Redis подберите коллекцию для подсчета посещений с определенных
+IP-адресов.
+> sadd ip_statistics:'127.0.0.1':'1982-03-25'
+> sadd ip_statistics:'127.0.0.1':'1992-03-25'
+> sadd ip_statistics:'127.0.0.1':'2022-03-25'
+> scard ip_statistics:'127.0.0.1'
+	(integer) 3
+	
+2. При помощи базы данных Redis решите задачу поиска имени пользователя по электронному
+адресу и наоборот, поиск электронного адреса пользователя по его имени.
+HMSET admin name_1 "vasia@redis.ru" name_2 "sasha@redis.ru" name_3 "admin@redis.ru"
+HVALS admin
+HGET admin name_3
+
+
+3. Организуйте хранение категорий и товарных позиций учебной базы данных shop в СУБД
+MongoDB.
+category = {'name': 'Процессоры'}
+db.categories.insert(category)
+category = {'name': 'Материнские платы'}
+db.categories.insert(category)
+
+product = ({"name": Intel", "price": 25, 'category': new DBRef('categories', category._id)})
+db.products.insert(product)
+product = ({"name": AMD", "price": 35, 'category': new DBRef('categories', category._id)})
+db.products.insert(product)
+
+product = ({"name": ASUS", "price": 15, 'category': new DBRef('categories', category._id)})
+db.products.insert(product)
+product = ({"name": ASRock", "price": 5, 'category': new DBRef('categories', category._id)})
+db.products.insert(product)
