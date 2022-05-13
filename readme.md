@@ -1,6 +1,6 @@
 # Итоговый проект по курсу базы данный MySQL
 ___
-<img src="er_diagram.png" width="400" height="380" /> <img src="Screenshot_7.png" width="400" height="380" />  
+<img src="er_diagram.png" width="400" height="350" /> <img src="Screenshot_7.png" width="400" height="350" />  
            
 ### ТЗ к проекту
 ___
